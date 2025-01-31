@@ -1,40 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Local Service Finder</title>
-   <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Service Finder</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="container">
-      <h1>Local Service Finder</h1>
-      
-      <div class="form-container">
-         <h2>Add a Service</h2>
-         <form id="serviceForm">
-            <label for="name">Service Name:</label>
-            <input type="text" id="name" name="name" required>
+    <div class="container">
+        <h1>Welcome to Local Service Finder</h1>
+        
+        <!-- Button to fetch services -->
+        <button id="viewServicesButton">View Available Services</button>
+        
+        <!-- Service list -->
+        <ul id="serviceList"></ul>
+    </div>
 
-            <label for="description">Description:</label>
-            <input type="text" id="description" name="description" required>
-
-            <label for="availability">Availability:</label>
-            <input type="text" id="availability" name="availability" required>
-
-            <label for="contact">Contact Info:</label>
-            <input type="text" id="contact" name="contact" required>
-
-            <button type="submit">Add Service</button>
-         </form>
-      </div>
-
-      <button id="viewServicesBtn">View Available Services</button>
-
-      <!-- Container to display available services -->
-      <div id="servicesContainer"></div>
-   </div>
-
-   <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

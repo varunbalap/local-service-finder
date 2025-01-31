@@ -1,34 +1,28 @@
-// server.js
-
 const express = require("express");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 
 const app = express();
+const PORT = 5001;
 
-// Use CORS to allow frontend to make requests
 app.use(cors());
+app.use(bodyParser.json());
 
-// Middleware to parse JSON data
-app.use(express.json());
+let services = [
+    { name: "John Doe", service: "Plumbing", location: "Chennai", contact: "9876543210" },
+    { name: "Jane Smith", service: "Electrical", location: "Bangalore", contact: "8765432109" }
+];
 
-// Define a simple route for testing
-app.get("/", (req, res) => {
-    res.send("Hello, world!");
-});
-
-// Define an endpoint to get available services
 app.get("/services", (req, res) => {
-    const services = [
-        { name: "John's Plumbing", service: "Plumbing", location: "Downtown", contact: "123-456-7890" },
-        { name: "Quick Electricians", service: "Electrical", location: "Uptown", contact: "987-654-3210" },
-        { name: "Super Fixers", service: "Home Repair", location: "Midtown", contact: "555-123-4567" },
-    ];
     res.json(services);
 });
 
-// Set the port for the server
-const PORT = process.env.PORT || 5001;
+app.post("/services", (req, res) => {
+    const newService = req.body;
+    services.push(newService);
+    res.status(201).json(newService);
+});
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });

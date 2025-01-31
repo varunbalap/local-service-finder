@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Service Finder</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Local Service Finder</h1>
-        <p>Find the best local service providers near you</p>
-    </header>
+    <h1>Local Service Finder</h1>
+
     <h2>Available Services</h2>
     <div id="service-list"></div>
 
+    <h2>Add Your Service</h2>
+    <form id="service-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required>
 
-    <main>
-        <section id="service-list">
-            <h2>Available Services</h2>
-            <!-- Service cards will be inserted here dynamically -->
-        </section>
-    </main>
+        <label for="service">Service Provided:</label>
+        <input type="text" id="service" required>
 
-    <footer>
-        <p>&copy; 2025 Local Service Finder</p>
-    </footer>
+        <label for="location">Location:</label>
+        <input type="text" id="location" required>
 
-    <script src="js/script.js"></script>
+        <label for="contact">Contact Number:</label>
+        <input type="text" id="contact" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
 </body>
 </html>
